@@ -61,8 +61,7 @@ int _altcd(info_t *info)
 			return (1);
 		}
 		_puts(_altgetenv(info, "OLDPWD=")), _putchar('\n');
-		chdir_ret = /* TODO: what should this be? */
-			chdir((dir = _altgetenv(info, "OLDPWD=")) ? dir : "/");
+		chdir_ret = chdir((dir = _altgetenv(info, "OLDPWD=")) ? dir : "/");
 	}
 	else
 		chdir_ret = chdir(info->argv[1]);
